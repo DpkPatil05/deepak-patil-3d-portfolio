@@ -1,18 +1,14 @@
 import { Canvas } from "@react-three/fiber";
-import Experience from "./pages/experience/Experience";
-import "./App.css";
+import MainScene from "./scenes/MainScene";
 
 const App = () => {
   return (
     <Canvas
-      camera={{ position: [0, 0, 5], fov: 75 }}
       shadows
-      gl={{ antialias: true }}
+      camera={{ position: [0, 2, 8], fov: 50 }}
+      className="h-screen w-screen"
     >
-      <color attach="background" args={["#111"]} />
-      <ambientLight intensity={1} />
-      <directionalLight position={[5, 5, 5]} intensity={2} />
-      <Experience />
+      <MainScene />
     </Canvas>
   );
 };
