@@ -4,9 +4,9 @@ import FloatingIsland from "../pages/experience/FloatingIsland";
 import Lights from "../components/Lights";
 import SakuraParticles from "./SakuraParticles";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import AnimatedModel from "../components/models/AnimatedModel";
 import ButterflySwarm from "../components/models/ButterflySwarm";
 import { Suspense } from "react";
+import BirdFlock from "../components/models/BirdFlock";
 
 const MainScene = () => {
   return (
@@ -27,15 +27,8 @@ const MainScene = () => {
         />
       </EffectComposer>
 
-      <AnimatedModel
-        path="/models/bird.glb"
-        scale={0.025}
-        position={[2, 1, -2]}
-        float
-        rotate
-      />
-
       <ButterflySwarm />
+      <BirdFlock />
 
       <OrbitControls
         enablePan={false}

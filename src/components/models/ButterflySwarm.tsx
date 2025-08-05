@@ -49,7 +49,7 @@ const ButterflySwarm = () => {
       length: BUTTERFLY_COUNT,
     }).map(() => {
       const clone = scene.clone(true) as THREE.Group;
-      clone.scale.setScalar(0.0005);
+      clone.scale.setScalar(0.0004);
       clone.position.copy(randomPosition());
 
       clone.traverse((child) => {
