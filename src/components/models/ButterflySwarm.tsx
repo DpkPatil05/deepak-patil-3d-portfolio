@@ -90,9 +90,18 @@ const ButterflySwarm = () => {
 
       butterfly.velocity.lerp(direction, 0.05);
       butterfly.group.position.add(butterfly.velocity);
-      butterfly.group.lookAt(
-        butterfly.group.position.clone().add(butterfly.velocity)
-      );
+
+      const desiredLook = new THREE.Quaternion();
+      const lookDirection = butterfly.velocity.clone().normalize();
+
+      if (lookDirection.lengthSq() > 0.0001) {
+        const dummy = new THREE.Object3D();
+        dummy.position.copy(butterfly.group.position);
+        dummy.lookAt(butterfly.group.position.clone().add(lookDirection));
+        desiredLook.copy(dummy.quaternion);
+
+        butterfly.group.quaternion.slerp(desiredLook, 0.1); // Smoothly rotate
+      }
     });
   });
 
