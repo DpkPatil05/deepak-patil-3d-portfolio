@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 import * as THREE from "three";
 
-const SakuraParticles = ({ count = 50 }) => {
+const SakuraParticles = ({ count = 25 }) => {
   const texture = useTexture("/textures/sakura.png");
   const particlesRef = useRef<THREE.Points>(null);
 

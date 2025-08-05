@@ -38,7 +38,7 @@ const BirdFlock = () => {
     const created: BirdInstance[] = Array.from({ length: BIRD_COUNT }).map(
       () => {
         const clone = scene.clone(true) as THREE.Group;
-        clone.scale.setScalar(0.015);
+        clone.scale.setScalar(0.018);
         clone.position.copy(randomPosition());
 
         clone.traverse((child) => {

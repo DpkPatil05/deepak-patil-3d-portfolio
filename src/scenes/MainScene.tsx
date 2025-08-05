@@ -17,7 +17,7 @@ const MainScene = () => {
 
       <FloatingIsland />
 
-      <SakuraParticles count={30} />
+      <SakuraParticles count={20} />
 
       <EffectComposer>
         <Bloom
